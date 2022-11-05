@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Shop</title>
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+
+<main class="d-flex flex-nowrap">
+    <h1 class="visually-hidden">Sidebars examples</h1>
+
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <span class="fs-5 fw-semibold">Navigation</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                    <a th:href="@{/admin/}" class="admin_nav_link">Home</a>
+                </button>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    <a th:href="@{/admin/products}" class="admin_nav_link">Product</a>
+                </button>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-primary btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                    <a th:href="@{/categories}" class="admin_nav_link">Category</a>
+                </button>
+            </li>
+            <li class="border-down my-3"></li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    <a th:href="@{/admin/users}" class="admin_nav_link">User</a>
+                </button>
+
+            </li>
+        </ul>
+    </div>
+
+    <div class="container"><br><br><br>
+        <h3>Update Category</h3>
+
+        <form th:action="@{/category-update}" method="post" th:object="${category}">
+            <label for="id">ID</label>
+            <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+            <br/>
+            <label for="title">Name</label>
+            <input type="text" th:field="*{name}" id="title" placeholder="name">
+            <br/>
+
+            <button class="btn btn-primary"> + Update Category</button>
+        </form>
+    </div>
+
+
+
+</main>
+
+</body>
+</html>

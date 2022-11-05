@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Shop</title>
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/reset.css}"/>
+</head>
+<body>
+
+<!-- Header -->
+<div class="container">
+    <div class="header_top">
+        <ul class="header_top_left">
+            <li><a class="header_list_item" th:href="@{/}">USD</a></li>
+            <li><a class="header_list_item" th:href="@{/}">English</a></li>
+            <li><a class="header_list_item" th:href="@{/}">Call us: 8 707 6546565</a></li>
+        </ul>
+        <ul class="header_top_right">
+            <li><a class="header_list_item" th:href="@{/my-account}">My Account</a></li>
+            <li><a class="header_list_item" th:href="@{/}">My cart</a></li>
+            <li><a class="header_list_item" th:href="@{/auth/user/create}">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="header_content">
+        <div class="header_content_logo">
+            <a th:href="@{/}">
+                <img th:src="@{img/logo.png}" alt="home"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navigation">
+    <div class="container">
+        <ul class="nav">
+            <li><a class="nav_link_item" th:href="@{/}">Home</a></li>
+            <li><a class="nav_link_item active" th:href="@{/products}">Bikes</a></li>
+            <li><a class="nav_link_item" th:href="@{/}">Blog</a></li>
+            <li><a class="nav_link_item" th:href="@{/}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="gray_bg">
+    <div class="container">
+        <div class="our_bikes">
+            <div class="bikes_left">
+                <form th:action="@{/products/find-title}" method="get">
+                    <input type="text" name="product_title" placeholder="product_title">
+                    <button class="btn btn-primary">Search</button>
+                </form><br>
+
+                <form th:action="@{/products/find-cat}" method="get">
+                    <h3>sort by year</h3>
+                    <select class="form-select" name="category_id">
+                        <div th:each="cat : ${categories}">
+                            <option th:value="${cat.id}" th:text="${cat.name}">category</option>
+                        </div>
+                    </select>
+                    <button class="btn btn-primary">Search</button>
+                </form>
+
+            </div>
+
+            <div class="bikes_right">
+                <div class="bike_posts1">
+                    <div class="bikes">
+                        <div class="bikes__item" th:each="product : ${products}">
+                            <div class="bikes__img">
+                                <img class="bikes__img" th:src="@{/images/{id}(id=${product.previewImageId})}" alt="" />
+                            </div>
+
+                            <div class="products__info">
+                                <a class="products__name" th:href="@{/products/{id}(id=${product.getId()})}"
+                                    th:text="${product.title}">product</a>
+                                <div class="products__price" th:text="'$'+${product.price}">$price</div>
+                            </div>
+                        </div>
+                        <!-- /.products__item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer_under">
+    <div class="container">
+        <div class="footer_under_text">
+            Copyright © 2022 <span class="blog_read"> BikeSport </span> by
+            Zhasulan. All rights reserved.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

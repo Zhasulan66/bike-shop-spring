@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Shop</title>
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/reset.css}"/>
+</head>
+<body>
+<main class="d-flex flex-nowrap">
+    <h1 class="visually-hidden">Sidebars examples</h1>
+
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <span class="fs-5 fw-semibold">Navigation</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+                <button class="btn btn-primary btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                    <a th:href="@{/admin/}" class="admin_nav_link">Home</a>
+                </button>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    <a th:href="@{/admin/products}" class="admin_nav_link">Product</a>
+                </button>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                    <a th:href="@{/categories}" class="admin_nav_link">Category</a>
+                </button>
+            </li>
+            <li class="border-down my-3"></li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    <a th:href="@{/admin/users}" class="admin_nav_link">User</a>
+                </button>
+
+            </li>
+        </ul>
+    </div>
+
+    <div class="b-example-divider b-example-vr"></div>
+
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" th:src="@{/img/logo.png}" alt="">
+        <h1 class="display-5 fw-bold">Admin CMS</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">It is Admin Content Management System page, where you can change data about product, category, users. You can do all operations with this entities.</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3"><a class="admin_nav_link" th:href="@{/}">Go Home</a></button>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+</body>
+</html>

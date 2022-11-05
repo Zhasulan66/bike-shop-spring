@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Bike Shop</title>
+  <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}"/>
+  <link rel="stylesheet" href="" th:href="@{/css/styles.css}"/>
+</head>
+<body>
+
+
+
+  <div class="container">
+    <h3>REGISTER USER</h3><br>
+
+    <form action="#" th:action="@{/auth/user/create}" th:object="${user}" method="post">
+
+      EMAIL: <br><input type="text" th:field="*{email}" id="title" placeholder="title"><br>
+      PASSWORD: <br><input type="text" th:field="*{password}" id="password" placeholder="password"><br>
+      FirstName: <br><input type="text" th:field="*{firstName}" id="firstName" placeholder="firstName"><br>
+      LastName: <br><input type="text" th:field="*{lastName}" id="lastName" placeholder="lastName"><br>
+      ROLE: <br><select class="form-select" th:field="*{role}">
+      <option value="USER">user</option>
+    </select><br>
+      STATUS: <br><select class="form-select" th:field="*{status}">
+      <option value="ACTIVE">active</option>
+    </select><br>
+
+      <button class="btn btn-success"> + REGISTER USER</button>
+    </form>
+
+    <hr/>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike Shop</title>
+    <link rel="stylesheet" href="" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/css/reset.css}"/>
+</head>
+<body>
+
+<!-- Header -->
+<div class="container">
+    <div class="header_top">
+        <ul class="header_top_left">
+            <li><a class="header_list_item" th:href="@{/}">USD</a></li>
+            <li><a class="header_list_item" th:href="@{/}">English</a></li>
+            <li><a class="header_list_item" th:href="@{/}">Call us: 8 707 6546565</a></li>
+        </ul>
+        <ul class="header_top_right">
+            <li><a class="header_list_item" th:href="@{/my-account}">My Account</a></li>
+            <li><a class="header_list_item" th:href="@{/}">My cart</a></li>
+            <li><a class="header_list_item" th:href="@{/auth/user/create}">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="header_content">
+        <div class="header_content_logo">
+            <a th:href="@{/}">
+                <img th:src="@{img/logo.png}" alt="home"/>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navigation">
+    <div class="container">
+        <ul class="nav">
+            <li><a class="nav_link_item" th:href="@{/}">Home</a></li>
+            <li><a class="nav_link_item active" th:href="@{/products}">Bikes</a></li>
+            <li><a class="nav_link_item" th:href="@{/}">Blog</a></li>
+            <li><a class="nav_link_item" th:href="@{/}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h3>User Info </h3><br>
+    <div>
+        <h4 th:text="${user.id} + '. ' + ${user.firstName} + ' ' + ${user.lastName}"></h4><br>
+        <h4 th:text="'email: '+ ${user.email}"></h4><br>
+        <h4 th:text="'role: '+ ${user.role}"></h4><br>
+    </div>
+
+</div>
+
+</body>
+</html>
